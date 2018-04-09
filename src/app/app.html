@@ -32,10 +32,7 @@
             </ion-col>
             <ion-col col-12>
               <ion-searchbar mode="ios" style="background: transparent"
-              [(ngModel)]="myInput"
-              [showCancelButton]="shouldShowCancel"
-              (ionInput)="onInput($event)"
-              (ionCancel)="onCancel($event)"
+              (ionInput)="filterAsso($event)"
               placeholder="Filtrer mes associations">
             </ion-searchbar>
           </ion-col>

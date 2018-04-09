@@ -16,6 +16,7 @@ import { AssociationPage } from '../pages/association/association';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { UserApiProvider } from '../providers/user-api/user-api';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UserApiProvider
   ]
 })
 export class AppModule {}

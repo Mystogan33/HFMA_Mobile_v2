@@ -60,6 +60,15 @@ page-association {
     color: green;
   }
 
+  .inputChip {
+
+  }
+
+  .inputChip > input {
+    margin-top: 0px !important;
+  }
+
+
   .inputProfile {
     color: #488aff !important;
     padding-left: 16px;

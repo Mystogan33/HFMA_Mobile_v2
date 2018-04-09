@@ -50,24 +50,39 @@ import { TabsPage } from '../pages/tabs/tabs';
 
       getAssociations() {
         this.associations = [
-          {picture: "assets/imgs/asso1.png"},
-          {picture: "assets/imgs/asso2.png"},
-          {picture: "assets/imgs/asso3.png"},
-          {picture: "assets/imgs/asso4.png"},
-          {picture: "assets/imgs/asso5.png"},
-          {picture: "assets/imgs/asso6.png"},
-          {picture: "assets/imgs/asso7.png"},
-          {picture: "assets/imgs/asso8.png"},
-          {picture: "assets/imgs/asso1.png"},
-          {picture: "assets/imgs/asso2.png"},
-          {picture: "assets/imgs/asso3.png"},
-          {picture: "assets/imgs/asso4.png"},
-          {picture: "assets/imgs/asso5.png"},
-          {picture: "assets/imgs/asso6.png"},
-          {picture: "assets/imgs/asso7.png"},
-          {picture: "assets/imgs/asso8.png"}
+          {name: "Asso1", picture: "assets/imgs/asso1.png"},
+          {name: "Asso2", picture: "assets/imgs/asso2.png"},
+          {name: "Asso3", picture: "assets/imgs/asso3.png"},
+          {name: "Asso4", picture: "assets/imgs/asso4.png"},
+          {name: "Asso5", picture: "assets/imgs/asso5.png"},
+          {name: "Asso6", picture: "assets/imgs/asso6.png"},
+          {name: "Asso7", picture: "assets/imgs/asso7.png"},
+          {name: "Asso8", picture: "assets/imgs/asso8.png"},
+          {name: "Asso1", picture: "assets/imgs/asso1.png"},
+          {name: "Asso2", picture: "assets/imgs/asso2.png"},
+          {name: "Asso3", picture: "assets/imgs/asso3.png"},
+          {name: "Asso4", picture: "assets/imgs/asso4.png"},
+          {name: "Asso5", picture: "assets/imgs/asso5.png"},
+          {name: "Asso6", picture: "assets/imgs/asso6.png"},
+          {name: "Asso7", picture: "assets/imgs/asso7.png"},
+          {name: "Asso8", picture: "assets/imgs/asso8.png"}
         ]
       }
+
+      filterAsso(ev: any) {
+    // Reset items back to all of the items
+     this.getAssociations();
+
+    // set val to the value of the searchbar
+    let val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.associations = this.associations.filter((asso) => {
+        return (asso.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+  }
 
       refreshList() {
         this.itemsMenu = [];

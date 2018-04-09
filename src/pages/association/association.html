@@ -45,19 +45,19 @@
       <ion-grid>
         <ion-row>
           <ion-col col-12>
-            <ion-item class="inputProfile">
-              <ion-label floating>Description:</ion-label>
-              <ion-input type="text" [(ngModel)]="association.description" [disabled]="!isEdit"></ion-input>
-            </ion-item>
+            <ion-chip #chip2 style="width: 100% !important">
+              <ion-icon name="book" color="secondary"></ion-icon>
+              <ion-input class="inputChip" type="text" [(ngModel)]="association.description" [disabled]="!isEdit"></ion-input>
+            </ion-chip>
           </ion-col>
           <ion-col col-9>
-            <ion-item class="inputProfile">
-              <ion-label floating>Site Web:</ion-label>
-              <ion-input type="text" [(ngModel)]="association.website" [disabled]="!isEdit"></ion-input>
-            </ion-item>
+            <ion-chip #chip2 style="width: 100% !important">
+              <ion-icon name="globe" color="secondary"></ion-icon>
+              <ion-input class="inputChip" type="text" [(ngModel)]="association.website" [disabled]="!isEdit"></ion-input>
+            </ion-chip>
           </ion-col>
           <ion-col col-3>
-            <button ion-fab style="margin-top: 10px;"><ion-icon name="globe" item-end></ion-icon></button>
+            <button style="position: absolute; right: 2%; margin-top: -3px;" color="secondary" ion-fab mini><ion-icon name="eye" item-end></ion-icon></button>
           </ion-col>
           <ion-col>
           </ion-col>
@@ -82,14 +82,14 @@
             </ion-item>
           </ion-col>
           <ion-col col-12>
-            <ion-list>
-              <ion-item mode="ios" detail-push *ngFor="let member of association.members" (click)="goToProfil(member)">
+            <ion-list no-lines>
+              <ion-item mode="ios" detail-push *ngFor="let member of association.members" (click)="goToProfil(member)" no-lines>
                 <ion-avatar item-start>
                   <img [src]="member.image">
                 </ion-avatar>
                 <h2 text-wrap>{{member.prenom}} {{member.nom}}</h2>
-                <p text-wrap>@{{member.pseudo}}</p>
-                <p text-wrap>{{member.status}}</p>
+                <p>@{{member.pseudo}}</p>
+                <p>{{member.status}}</p>
               </ion-item>
             </ion-list>
           </ion-col>
