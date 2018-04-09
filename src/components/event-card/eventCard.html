@@ -1,0 +1,176 @@
+<ion-card class="roundCard">
+
+  <ion-item>
+    <ion-avatar item-start>
+      <img [src]="event.logo">
+    </ion-avatar>
+    <h2 text-wrap>{{event.title}}</h2>
+    <p>{{event.date}}</p>
+  </ion-item>
+
+  <ion-segment [(ngModel)]="currentOnglet" mode="md">
+
+    <ion-segment-button value="preview" class="eventChoice" (click)="setSlide(0)">
+      Aperçu
+    </ion-segment-button>
+
+    <ion-segment-button value="infos" class="eventChoice" (click)="setSlide(1)">
+      Informations
+    </ion-segment-button>
+
+    <ion-segment-button value="pictures" class="eventChoice" (click)="setSlide(2)">
+      Photos
+    </ion-segment-button>
+
+  </ion-segment>
+
+  <ion-slides (ionSlideDidChange)="setSegment()" autoplay="3000" effect='slide' loop pager="true" initialSlide="3">
+    <ion-slide>
+      <ion-list>
+
+        <img [src]="event.image">
+
+        <ion-card-content>
+          <p style="color: #488aff !important;">{{event.description}}</p>
+        </ion-card-content>
+      </ion-list>
+    </ion-slide>
+    <ion-slide>
+      <ion-list>
+        <ion-item detail-push mode="ios" (click)="showAssociation()" no-lines>
+          Association : <p>{{event.association}}</p>
+        </ion-item>
+        <ion-item mode="ios" no-lines>
+          <h2 item-start style="padding-bottom: 10px;">Lieu : <p>{{event.lieu}}</p> </h2>
+          <ion-fab item-end style="margin: -5px; padding-left: 36px">
+            <button ion-fab mini color="secondary"><ion-icon name="pin"></ion-icon></button>
+          </ion-fab>
+        </ion-item>
+        <ion-item no-lines no-border mode="ios">
+          <h2>Tarif : <p>{{event.tarif}}</p> </h2>
+        </ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6 text-center>
+              <button *ngIf="!isInterested" ion-button color="primary" (click)="toggleInterest()" style=" text-align:center;" round outline>Je participe</button>
+              <button *ngIf="isInterested" ion-button color="secondary" (click)="toggleInterest()" style="padding: 15px; text-align:center;" round>J'y participe !</button>
+            </ion-col>
+            <ion-col col-6 text-center>
+              <button ion-button color="danger" style="padding: 15px; text-align:center" (click)="toggleInterest()" round>Pas intéressé</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-list>
+    </ion-slide>
+    <ion-slide>
+      <ion-list>
+        <ion-item>
+          <ion-grid style="padding: 0px">
+            <ion-row>
+              <ion-col col-6>
+                <img class="roundPicture" [src]="event.image">
+              </ion-col>
+              <ion-col col-6>
+                <img class="roundPicture" [src]="event.image">
+              </ion-col>
+              <ion-col col-6>
+                <img class="roundPicture" [src]="event.image">
+              </ion-col>
+              <ion-col col-6>
+                <img class="roundPicture" [src]="event.image">
+              </ion-col>
+              <ion-col col-6>
+                <img class="roundPicture" [src]="event.image">
+              </ion-col>
+              <ion-col col-6>
+                <img class="roundPicture" [src]="event.image">
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- <div [ngSwitch]="currentOnglet">
+
+    <ion-list *ngSwitchCase="'preview'">
+
+      <img [src]="event.image">
+
+      <ion-card-content>
+        <p style="color: #488aff !important;">{{event.description}}</p>
+      </ion-card-content>
+    </ion-list>
+    <ion-list *ngSwitchCase="'infos'">
+      <ion-item detail-push mode="ios" (click)="showAssociation()" no-lines>
+        Association : <p>{{event.association}}</p>
+      </ion-item>
+      <ion-item mode="ios" no-lines>
+        <h2 item-start style="padding-bottom: 10px;">Lieu : <p>{{event.lieu}}</p> </h2>
+        <ion-fab item-end style="margin: 0; padding-left: 36px">
+          <button ion-fab mini color="secondary"><ion-icon name="pin"></ion-icon></button>
+        </ion-fab>
+      </ion-item>
+      <ion-item no-lines no-border mode="ios">
+        <h2>Tarif : <p>{{event.tarif}}</p> </h2>
+      </ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6 text-center>
+            <button *ngIf="!isInterested" ion-button color="primary" (click)="toggleInterest()" style=" text-align:center;" round outline>Je participe</button>
+            <button *ngIf="isInterested" ion-button color="secondary" (click)="toggleInterest()" style="padding: 15px; text-align:center;" round>J'y participe !</button>
+          </ion-col>
+          <ion-col col-6 text-center>
+            <button ion-button color="danger" style="padding: 15px; text-align:center" (click)="toggleInterest()" round>Pas intéressé</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+    <ion-list *ngSwitchCase="'pictures'">
+      <ion-item>
+        <ion-grid style="padding: 0px">
+          <ion-row>
+            <ion-col col-6>
+              <img class="roundPicture" [src]="event.image">
+            </ion-col>
+            <ion-col col-6>
+              <img class="roundPicture" [src]="event.image">
+            </ion-col>
+            <ion-col col-6>
+              <img class="roundPicture" [src]="event.image">
+            </ion-col>
+            <ion-col col-6>
+              <img class="roundPicture" [src]="event.image">
+            </ion-col>
+            <ion-col col-6>
+              <img class="roundPicture" [src]="event.image">
+            </ion-col>
+            <ion-col col-6>
+              <img class="roundPicture" [src]="event.image">
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+  </div> -->
+
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>{{event.likes}} Likes</div>
+      </button>
+    </ion-col>
+    <ion-col style="border-top: 1px solid limegreen;">
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>{{event.comments}} Comments</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note class="publication">{{event.published}}h ago</ion-note>
+    </ion-col>
+  </ion-row>
+
+</ion-card>

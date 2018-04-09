@@ -1,1 +1,60 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-split-pane>
+  <ion-menu type="overlay" [content]="content">
+    <ion-header>
+      <ion-toolbar color="search" text-center>
+        <ion-title style="position: absolute;top: 30%;left: 38%;">Menu</ion-title>
+        <ion-buttons left>
+          <button ion-button menuToggle>
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="card-background-page" [@menuItems]="itemsMenu">
+      <ion-card>
+        <img src="assets/imgs/home.png"/>
+        <div class="card-title">HFMA</div>
+        <div class="card-subtitle">l'Application N°1 des associations</div>
+      </ion-card>
+
+      <ion-list style="margin-top: 20px">
+        <button ion-item *ngFor="let item of itemsMenu" (click)="openPage(item.page)" mode="ios" color='search' style="border-radius: 20px; margin: 11px; width: 94%;" detail-push no-lines>
+          {{item.description}}
+        </button>
+      </ion-list>
+
+      <ion-item-divider style="background: transparent !important" no-lines>
+        <ion-grid style="padding: 0; margin: 0">
+          <ion-row>
+            <ion-col col-12>
+              <h2 style="color: white">Mes associations</h2>
+            </ion-col>
+            <ion-col col-12>
+              <ion-searchbar mode="ios" style="background: transparent"
+              [(ngModel)]="myInput"
+              [showCancelButton]="shouldShowCancel"
+              (ionInput)="onInput($event)"
+              (ionCancel)="onCancel($event)"
+              placeholder="Filtrer mes associations">
+            </ion-searchbar>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item-divider>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3 *ngFor="let asso of associations" text-center>
+        <ion-avatar>
+          <img style="width: 54px;" [src]="asso.picture">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" main #content swipeBackEnabled="false"></ion-nav>
+
+</ion-split-pane>

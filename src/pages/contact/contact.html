@@ -1,17 +1,30 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
+  <ion-navbar class="navBar" color='primary'>
+
+    <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+
+    <ion-item style="background: transparent !important; border:none;" no-lines>
+
+    <ion-title class="pageTitle">Messages</ion-title>
+
+    <ion-avatar item-end (tap)="showProfil()" (click)="showProfil()" (press)="deconnexion('bottom')">
+      <img src="assets/imgs/avatar.jpg">
+    </ion-avatar>
+
+  </ion-item>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+  <ion-list style="margin-top: 10px">
+    <ion-item *ngFor="let chatter of chatters" style="margin-left: 10px; margin-bottom: 10px; border-radius: 20px; width: 95%;" no-lines mode='ios' detail-push>
+      <ion-avatar item-start (click)="goToProfil(chatter)">
+        <img [src]="chatter.image">
+      </ion-avatar>
+      <h2 (click)="showChat()">{{chatter.prenom}} {{chatter.nom}}</h2>
+      <p>@{{chatter.pseudo}}</p>
     </ion-item>
   </ion-list>
 </ion-content>

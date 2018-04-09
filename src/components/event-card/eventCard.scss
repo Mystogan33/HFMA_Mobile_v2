@@ -1,0 +1,33 @@
+event-card {
+
+  ion-label {
+    color: #488aff !important;
+  }
+
+  .roundCard {
+    border-radius: 10px;
+    border: 1px solid limegreen;
+    margin-top: 20px;
+  }
+
+  .eventChoice {
+    border-right: 1px solid lawngreen !important;
+  }
+
+  .card-md h2 {
+    color: #488aff !important;
+  }
+
+  .roundPicture {
+    border-radius: 6px;
+
+  }
+
+  .publication {
+    position: absolute;
+    bottom: 15px;
+    left: 25px;
+  }
+
+
+}

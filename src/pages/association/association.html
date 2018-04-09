@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-navbar color='primary'>
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-item color="primary" no-lines>
+
+      <ion-title class="pageTitle">{{association.name}}</ion-title>
+
+      <ion-avatar item-end (tap)="showProfil()" (click)="showProfil()" (press)="deconnexion('bottom')">
+        <img src="assets/imgs/avatar.jpg">
+      </ion-avatar>
+
+    </ion-item>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab bottom right *ngIf="editable">
+    <button *ngIf="!isEdit && editable" ion-fab color="secondary" (click)="editer()"><ion-icon name="create"></ion-icon></button>
+    <button *ngIf="isEdit && editable" ion-fab color="secondary" (click)="save()"><ion-icon name="checkmark"></ion-icon></button>
+  </ion-fab>
+
+  <ion-fab bottom right *ngIf="!editable">
+    <button ion-fab color="secondary"><ion-icon name="options"></ion-icon></button>
+    <ion-fab-list side="left">
+      <button ion-fab color="secondary"><ion-icon name="mail"></ion-icon></button>
+      <button ion-fab color="secondary"><ion-icon name="call"></ion-icon></button>
+    </ion-fab-list>
+    <ion-fab-list side="top">
+      <button ion-fab color="secondary"><ion-icon name="person-add"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-item no-lines class="pseudoImage">
+    <img class="profilePic" [src]="association.image">
+  </ion-item>
+  <ion-card class="cardProfile">
+    <ion-item no-lines class="pseudoItem">
+      <h1 class="pseudo">{{association.name}}</h1>
+    </ion-item>
+    <ion-list>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12>
+            <ion-item class="inputProfile">
+              <ion-label floating>Description:</ion-label>
+              <ion-input type="text" [(ngModel)]="association.description" [disabled]="!isEdit"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-9>
+            <ion-item class="inputProfile">
+              <ion-label floating>Site Web:</ion-label>
+              <ion-input type="text" [(ngModel)]="association.website" [disabled]="!isEdit"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-3>
+            <button ion-fab style="margin-top: 10px;"><ion-icon name="globe" item-end></ion-icon></button>
+          </ion-col>
+          <ion-col>
+          </ion-col>
+          <ion-col style="border-top: 1px solid limegreen; margin-top: 30px">
+          </ion-col>
+          <ion-col>
+          </ion-col>
+          <ion-col col-12>
+            <ion-item>
+              <img [src]="association.localisation">
+            </ion-item>
+          </ion-col>
+          <ion-col>
+          </ion-col>
+          <ion-col style="border-top: 1px solid limegreen;">
+          </ion-col>
+          <ion-col>
+          </ion-col>
+          <ion-col col-12>
+            <ion-item class="inputProfile" no-lines no-border>
+              <h2 style="color: #488aff !important;">Membres :</h2>
+            </ion-item>
+          </ion-col>
+          <ion-col col-12>
+            <ion-list>
+              <ion-item mode="ios" detail-push *ngFor="let member of association.members" (click)="goToProfil(member)">
+                <ion-avatar item-start>
+                  <img [src]="member.image">
+                </ion-avatar>
+                <h2 text-wrap>{{member.prenom}} {{member.nom}}</h2>
+                <p text-wrap>@{{member.pseudo}}</p>
+                <p text-wrap>{{member.status}}</p>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+          <ion-col>
+          </ion-col>
+          <ion-col style="border-top: 1px solid limegreen;">
+          </ion-col>
+          <ion-col>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+  </ion-card>
+  <ion-item no-lines  style="background: transparent; text-align: center;">
+    <h1 class="pseudo">Evenements de l'association</h1>
+  </ion-item>
+  <event-card *ngFor="let event of association.events" [event]="event"></event-card>
+</ion-content>
