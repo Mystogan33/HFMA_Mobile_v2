@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color='search' style="padding: 0 !important">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-item color="search" no-lines>
+
+      <ion-toolbar class="searchBar" no-lines>
+        <ion-searchbar (ionInput)="filterEvents($event)" placeholder="Rechercher un utilisateur..." animated="true" mode="ios" style="padding: 0px" no-lines></ion-searchbar>
+      </ion-toolbar>
+
+    </ion-item>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngFor="let user of userList" style="border-top: 4px solid limegreen">
+    <ion-item class="cardUser">
+    <ion-avatar item-start>
+      <img [src]="user.picture.large">
+    </ion-avatar>
+    <!-- <h2 style="text-transform: capitalize">{{user.login.username}}</h2>
+      <ion-icon color="primary" item-end [name]="user.gender"></ion-icon>
+      <ion-icon color="primary" item-end name="md-more"></ion-icon>
+    <p><ion-icon color="primary" item-end name="calendar"></ion-icon>{{user.dob.split(" ")[0]}}</p> -->
+    <ion-grid>
+      <ion-row>
+        <ion-col><h2 style="text-transform: capitalize">{{user.login.username}}</h2></ion-col>
+        <ion-col><ion-icon color="primary" item-end [name]="user.gender"></ion-icon></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p><ion-icon color="primary" item-end name="calendar"></ion-icon>{{user.dob.split(" ")[0]}}</p>
+        </ion-col>
+        <ion-col>
+          <p><ion-icon color="primary" item-end name="calendar"></ion-icon>{{user.location.city}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <p><ion-icon color="primary" item-end name="md-more"></ion-icon></p>
+  </ion-item>
+
+</ion-card>
+</ion-content>

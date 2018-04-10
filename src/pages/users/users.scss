@@ -1,0 +1,32 @@
+page-users {
+
+  .searchBarInput {
+    padding-bottom: 0px;
+    color: #fff !important;
+  }
+
+  .content {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end
+}
+
+.diagonal {
+  border-bottom: 100px solid limegreen;
+  border-left: 75px solid rgba(0, 0, 0, 0);
+  height: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.searchBar {
+
+}
+
+div.toolbar-content.toolbar-content-md > ion-item > div.item-inner > div > ion-label {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+}

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color='search' style="padding: 0 !important">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-item color="search" no-lines>
+
+      <ion-toolbar class="searchBar" no-lines>
+        <ion-searchbar (ionInput)="filterEvents($event)" placeholder="Rechercher une association..." animated="true" mode="ios" style="padding: 0px" no-lines></ion-searchbar>
+      </ion-toolbar>
+
+    </ion-item>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+</ion-content>
