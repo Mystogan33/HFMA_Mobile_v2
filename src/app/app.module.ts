@@ -5,6 +5,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { eventCard } from '../components/event-card/eventCard';
+import { UserCardComponent } from '../components/user-card/user-card';
 
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
@@ -34,7 +35,8 @@ import { UserApiProvider } from '../providers/user-api/user-api';
     OtherEventsPage,
     AssociationPage,
     UsersPage,
-    AssociationsPage
+    AssociationsPage,
+    UserCardComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ import { UserApiProvider } from '../providers/user-api/user-api';
     OtherEventsPage,
     AssociationPage,
     UsersPage,
-    AssociationsPage
+    AssociationsPage,
+    UserCardComponent
   ],
   providers: [
     StatusBar,

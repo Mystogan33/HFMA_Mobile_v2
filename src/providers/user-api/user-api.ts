@@ -7,11 +7,11 @@ export class UserApiProvider {
   urlApi : string;
 
   constructor(public http: HttpClient) {
-    this.urlApi = "https://randomuser.me/api/?results=10";
+    this.urlApi = "https://randomuser.me/api/?results=";
   }
 
-  getUsers() {
-    return this.http.get(this.urlApi);
+  getUsers(number) {
+    return this.http.get(this.urlApi + number);
   }
 
 }

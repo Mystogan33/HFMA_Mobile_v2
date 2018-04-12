@@ -12,22 +12,54 @@ export class UsersPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public userApi : UserApiProvider) {
 
-    this.getUsers();
+    this.getUsers(1000);
 
   }
 
-  getUsers() {
+  getUsers(number) {
 
-    this.userApi.getUsers().subscribe((data) => {
+    this.userApi.getUsers(number).subscribe((data) => {
       this.userList = data['results'];
-      },
-      (error) => {
-        console.log(error);
-      },
-      () => {
-        console.info("Call for users API completed");
-      })
+      this.sortData();
+    },
+    (error) => {
+      console.log(error);
+    },
+    () => {
+      console.info("Call for users API completed");
+    })
 
+  }
+
+  sortData() {
+    
+    var mapped = this.userList.map(function(e, i) {
+      return { index: i, value: e.login.username.toLowerCase() };
+    })
+
+    mapped.sort(function(a, b) {
+      if (a.value > b.value) {
+        return 1;
+      }
+      if (a.value < b.value) {
+        return -1;
+      }
+      return 0;
+    });
+
+    this.userList = mapped.map((e) => {
+      return this.userList[e.index];
+    });
+
+
+  }
+
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    this.getUsers(10);
+    setTimeout(() => {
+      refresher.complete();
+    }, 1000);
   }
 
 }

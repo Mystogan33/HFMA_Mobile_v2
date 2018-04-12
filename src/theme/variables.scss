@@ -43,6 +43,10 @@ $colors: (
   search: #e57373
 );
 
+$refresher-border-color: transparent;
+$refresher-icon-color : color($colors, "search") !important;
+$refresher-text-color : color($colors, "search") !important;
+
 
 // App iOS Variables
 // --------------------------------------------------
