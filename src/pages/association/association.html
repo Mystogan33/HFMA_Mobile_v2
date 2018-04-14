@@ -7,7 +7,7 @@
 
     <ion-item color="primary" no-lines>
 
-      <ion-title class="pageTitle">{{association.name}}</ion-title>
+      <ion-title class="pageTitle">{{editable ? "Mon association" : association.name}}</ion-title>
 
       <ion-avatar item-end (tap)="showProfil()" (click)="showProfil()" (press)="deconnexion('bottom')">
         <img src="assets/imgs/avatar.jpg">
@@ -39,7 +39,7 @@
   </ion-item>
   <ion-card class="cardProfile">
     <ion-item no-lines class="pseudoItem">
-      <h1 class="pseudo">{{association.name}}</h1>
+      <ion-input class="inputChip" [(ngModel)]="association.name" [disabled]="!isEdit"></ion-input>
     </ion-item>
     <ion-list>
       <ion-grid>

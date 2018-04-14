@@ -37,6 +37,8 @@ page-association {
     position: absolute;
     top: 1%;
     padding-top: 0px;
+    padding-left: 0px;
+    margin-left: 0 px;
   }
 
   .pseudoItem {
@@ -44,7 +46,36 @@ page-association {
     text-align: center;
     position: absolute;
     top: 25%;
+    font-size: x-large;
+    text-align: center;
     padding-top: 0px;
+    padding-left: 0;
+    margin-left: 0;
+    outline: none;
+    border: none;
+  }
+
+  .pseudoItem .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .inputChip > input {
+    color: #3e2723;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    border: none;
+
+  }
+
+  .pseudoItem .inputChip > input[disabled] {
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    border: none;
+
   }
 
   ion-label {
@@ -66,7 +97,18 @@ page-association {
 
   .inputChip > input {
     margin-top: 0px !important;
+    text-align: center;
+    padding: 0;
+    margin: 0;
   }
+
+  // .inputChip > input[disabled] {
+  //   color: white;
+  //   text-align: center;
+  //   padding: 0;
+  //   margin: 0;
+  // }
+
 
 
   .inputProfile {

@@ -328,7 +328,7 @@ lieu: "Ingesup Bordeaux, Bordeaux", association: "Web for All", likes: 20, comme
 }
 if(!associationName) {
   this.association = {
-    name: "Mon association", image: "assets/imgs/MTB.jpg", description: "Association de descente", website: "www.google.fr", localisation: "assets/imgs/maps.png",
+    name: "Rider of Heaven", image: "assets/imgs/MTB.jpg", description: "Association de descente", website: "www.google.fr", localisation: "assets/imgs/maps.png",
     members: [
       {
         nom: "Gamin",
