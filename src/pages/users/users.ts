@@ -11,13 +11,10 @@ export class UsersPage {
   userList: Array<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public userApi : UserApiProvider) {
-
-    this.getUsers(1000);
-
+    this.getUsers(100);
   }
 
   getUsers(number) {
-
     this.userApi.getUsers(number).subscribe((data) => {
       this.userList = data['results'];
       this.sortData();
@@ -28,13 +25,11 @@ export class UsersPage {
     () => {
       console.info("Call for users API completed");
     })
-
   }
 
   sortData() {
-    
-    var mapped = this.userList.map(function(e, i) {
-      return { index: i, value: e.login.username.toLowerCase() };
+    var mapped = this.userList.map(function(user, index) {
+      return { index: index, value: user.login.username.toLowerCase() };
     })
 
     mapped.sort(function(a, b) {
@@ -47,10 +42,11 @@ export class UsersPage {
       return 0;
     });
 
-    this.userList = mapped.map((e) => {
-      return this.userList[e.index];
+    this.userList = mapped.map((user) => {
+      return this.userList[user.index];
     });
 
+    console.info(this.userList)
 
   }
 

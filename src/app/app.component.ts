@@ -64,14 +64,6 @@ import { AssociationsPage } from '../pages/associations/associations';
         {name: "Asso5", picture: "assets/imgs/asso5.png"},
         {name: "Asso6", picture: "assets/imgs/asso6.png"},
         {name: "Asso7", picture: "assets/imgs/asso7.png"},
-        {name: "Asso8", picture: "assets/imgs/asso8.png"},
-        {name: "Asso1", picture: "assets/imgs/asso1.png"},
-        {name: "Asso2", picture: "assets/imgs/asso2.png"},
-        {name: "Asso3", picture: "assets/imgs/asso3.png"},
-        {name: "Asso4", picture: "assets/imgs/asso4.png"},
-        {name: "Asso5", picture: "assets/imgs/asso5.png"},
-        {name: "Asso6", picture: "assets/imgs/asso6.png"},
-        {name: "Asso7", picture: "assets/imgs/asso7.png"},
         {name: "Asso8", picture: "assets/imgs/asso8.png"}
       ]
     }

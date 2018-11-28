@@ -7,13 +7,8 @@ import { Component, Input } from '@angular/core';
 
 export class UserCardComponent {
 
-  text: string;
-
   @Input() user: any;
 
-
-  constructor() {
-
-  }
+  constructor() {}
 
 }

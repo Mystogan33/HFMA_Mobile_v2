@@ -37,10 +37,12 @@
   <ion-item no-lines class="pseudoImage">
     <img class="profilePic" [src]="association.image">
   </ion-item>
+
+  <ion-item no-lines class="pseudoItem">
+    <ion-input class="inputChip" [(ngModel)]="association.name" [disabled]="!isEdit"></ion-input>
+  </ion-item>
+
   <ion-card class="cardProfile">
-    <ion-item no-lines class="pseudoItem">
-      <ion-input class="inputChip" [(ngModel)]="association.name" [disabled]="!isEdit"></ion-input>
-    </ion-item>
     <ion-list>
       <ion-grid>
         <ion-row>

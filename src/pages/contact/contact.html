@@ -19,7 +19,7 @@
 
 <ion-content>
   <ion-list style="margin-top: 10px">
-    <ion-item *ngFor="let chatter of chatters" style="margin-left: 10px; margin-bottom: 10px; border-radius: 20px; width: 95%;" no-lines mode='ios' detail-push>
+    <ion-item *ngFor="let chatter of chatters" class="chatterItem" no-lines mode='ios' detail-push>
       <ion-avatar item-start (click)="goToProfil(chatter)">
         <img [src]="chatter.image">
       </ion-avatar>

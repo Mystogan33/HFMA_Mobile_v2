@@ -3,15 +3,9 @@
   <ion-card class="loginCard">
 
     <ion-segment [(ngModel)]="mode" mode="md">
-      <ion-segment-button value="signIn" class="authChoice">
-        Connexion
-      </ion-segment-button>
-      <ion-segment-button value="signOut" class="authChoice">
-        Inscription
-      </ion-segment-button>
-      <ion-segment-button value="informations">
-        Informations
-      </ion-segment-button>
+      <ion-segment-button value="signIn" class="authChoice">Connexion</ion-segment-button>
+      <ion-segment-button value="signUp" class="authChoice">Inscription</ion-segment-button>
+      <ion-segment-button value="informations">Informations</ion-segment-button>
     </ion-segment>
 
     <div [ngSwitch]="mode">
@@ -34,8 +28,7 @@
         </ion-grid>
       </ion-list>
 
-      <ion-list *ngSwitchCase="'signOut'">
-
+      <ion-list *ngSwitchCase="'signUp'">
         <ion-grid>
           <ion-row>
             <ion-col col-6>
@@ -82,17 +75,15 @@
             </ion-col>
           </ion-row>
         </ion-grid>
-
       </ion-list>
 
       <ion-list *ngSwitchCase="'informations'">
         Under development
       </ion-list>
     </div>
-
   </ion-card>
 
-  <button *ngIf="mode == 'signIn' || mode == 'signOut'" ion-button round class="signInButton" (click)="authentification()">{{mode == "signIn" ? "Se connecter" : "S'inscrire" }}</button>
+  <button *ngIf="mode == 'signIn' || mode == 'signUp'" ion-button round class="signInButton" (click)="authentification()">{{mode == "signIn" ? "Se connecter" : "S'inscrire" }}</button>
   <button *ngIf="mode == 'informations'" ion-button round class="signInButton" (click)="authentification()">Nous contacter</button>
   <button ion-button round outline class="signUpButton">Oubli ?</button>
 

@@ -25,7 +25,7 @@ export class HomePage {
     this.tab2 = MyEventsPage;
 
     if(!localStorage.getItem("Token")) {
-      this.appCtrl.getRootNav().push(LoginPage);
+      this.appCtrl.getRootNavById().push(LoginPage);
     } else this.getEvents();
 
 
@@ -65,21 +65,7 @@ export class HomePage {
 
     toast.present(toast);
 
-    this.appCtrl.getRootNav().push(LoginPage);
-  }
-
-  filterEvents(ev: any) {
-
-    this.getEvents();
-
-    let val = ev.target.value;
-
-    if (val && val.trim() != '') {
-      this.events = this.events.filter((event) => {
-        return (event.title.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
-    }
-
+    this.appCtrl.getRootNavById().push(LoginPage);
   }
 
 }

@@ -55,7 +55,7 @@ export class ContactPage {
   constructor(public navCtrl: NavController, public appCtrl: App, public toastCtrl: ToastController) {
 
     if(!localStorage.getItem("Token")) {
-      this.appCtrl.getRootNav().push(LoginPage);
+      this.appCtrl.getRootNavById().push(LoginPage);
     }
 
   }
@@ -82,7 +82,7 @@ export class ContactPage {
 
     toast.present(toast);
 
-    this.appCtrl.getRootNav().push(LoginPage);
+    this.appCtrl.getRootNavById().push(LoginPage);
   }
 
 }

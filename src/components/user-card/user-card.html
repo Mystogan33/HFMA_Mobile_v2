@@ -2,14 +2,14 @@
   <ion-avatar item-start>
     <img [src]="user.picture.large">
   </ion-avatar>
-  <h2 style="text-transform: capitalize"><ion-icon style="margin-right: 10px;" large color="primary" [name]="user.gender"></ion-icon>{{user.login.username}}</h2>
+  <h2 style="text-transform: capitalize"><ion-icon class="genderIcon" large color="primary" [name]="user.gender"></ion-icon>{{user.login.username}}</h2>
   <ion-fab right bottom>
-    <button ion-fab clear item-end color="light" style="-webkit-box-shadow: none; margin-right: -16px; background-color: transparent"><ion-icon name="more" color="primary"></ion-icon></button>
+    <button ion-fab clear item-end color="light" class="moreButton"><ion-icon name="more" color="primary"></ion-icon></button>
     <ion-fab-list side="left">
       <button ion-fab color="secondary"><ion-icon name="call"></ion-icon></button>
       <button ion-fab color="secondary"><ion-icon name="mail"></ion-icon></button>
       <button ion-fab color="secondary"><ion-icon name="chatbubbles"></ion-icon></button>
     </ion-fab-list>
   </ion-fab>
-  <p style="text-transform: capitalize; color: #488aff;"><ion-icon color="danger" item-end name="calendar"></ion-icon>{{user.dob.split(" ")[0]}}<ion-icon style="margin-left: 15px;" color="secondary" item-end name="pin"></ion-icon>{{user.location.city}}</p>
+  <p style="text-transform: capitalize; color: #488aff;"><ion-icon color="danger" item-end name="calendar"></ion-icon>{{user.dob.date.split("T")[0]}}<ion-icon style="margin-left: 15px;" color="secondary" item-end name="pin"></ion-icon>{{user.location.city}}</p>
 </ion-item>

@@ -18,13 +18,11 @@ export class eventCard {
 
   ongletTitle: any = ['preview', 'infos', 'pictures'];
 
-  constructor(public navCtrl: NavController, public appCtrl: App) {
-
-  }
+  constructor(public navCtrl: NavController, public appCtrl: App) {}
 
   showAssociation() {
     let asso = this.event.association;
-    this.appCtrl.getRootNav().push(AssociationPage, {association: asso});
+    this.appCtrl.getRootNavById().push(AssociationPage, {association: asso});
   }
 
   setSegment() {

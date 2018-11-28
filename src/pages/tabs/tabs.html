@@ -1,4 +1,4 @@
-<ion-tabs selectedIndex="1" color='primary'>
+<ion-tabs selectedIndex="1" [color]="tabsColor" #mainTabs (ionChange)="tabsChanged()">
   <ion-tab [root]="tab1Root" tabTitle="Mon asso" tabIcon="people"></ion-tab>
   <ion-tab [root]="tab2Root" tabTitle="Accueil" tabIcon="home"></ion-tab>
   <ion-tab [root]="tab3Root" tabTitle="Messages" tabIcon="chatbubbles" tabBadge="4" tabBadgeStyle='danger'></ion-tab>

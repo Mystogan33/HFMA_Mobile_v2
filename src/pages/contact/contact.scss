@@ -9,6 +9,23 @@ page-contact {
     left: -23px !important;
   }
 
+  .chatterItem {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    width: 95%;
+    background-color: slateblue;
+
+    h2 {
+      color: white;
+    }
+
+    p {
+      color: burlywood;
+    }
+
+  }
+
   ion-content {
     background: url('../assets/imgs/messages.jpg') no-repeat;
     -webkit-background-size: cover;

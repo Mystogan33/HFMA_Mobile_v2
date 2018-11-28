@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams,  App } from 'ionic-angular';
+import { NavController, NavParams, App, MenuController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 
 @Component({
@@ -10,15 +10,16 @@ export class LoginPage {
 
   mode: any = "signIn";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public appCtrl: App) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public appCtrl: App, public menuCtrl: MenuController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    this.menuCtrl.enable(false);
   }
 
   authentification() {
     localStorage.setItem("Token" , "OK");
+    this.menuCtrl.enable(true);
     this.appCtrl.getRootNav().push(TabsPage);
   }
 

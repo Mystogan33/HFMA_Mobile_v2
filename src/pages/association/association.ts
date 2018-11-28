@@ -17,16 +17,14 @@ export class AssociationPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController, public appCtrl: App) {
 
     if(!localStorage.getItem("Token")) {
-      this.appCtrl.getRootNav().push(LoginPage);
+      this.appCtrl.getRootNavById().push(LoginPage);
     } else {
       this.associationName = this.navParams.get("association");
       this.getAssociationDetails(this.associationName);
     }
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AssociationPage');
-  }
+  ionViewDidLoad() {}
 
   showProfil() {
     this.navCtrl.push(ProfilPage, {animate: true, animation: 'ios-transition', duration: 1000});
@@ -42,7 +40,7 @@ export class AssociationPage {
 
     toast.present(toast);
 
-    this.appCtrl.getRootNav().push(LoginPage);
+    this.appCtrl.getRootNavById().push(LoginPage);
   }
 
   editer() {
