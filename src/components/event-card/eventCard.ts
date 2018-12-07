@@ -22,17 +22,18 @@ export class eventCard {
 
   showAssociation() {
     let asso = this.event.association;
-    this.appCtrl.getRootNavById().push(AssociationPage, {association: asso});
+    this.appCtrl.getRootNav().push(AssociationPage, {association: asso});
   }
 
   setSegment() {
     var index = this.slides.getActiveIndex();
-    if(index == 2) {
-      this.currentOnglet = this.ongletTitle[1];
-    } else if (index == 3) {
-      this.currentOnglet = this.ongletTitle[2];
-    } else {
-      this.currentOnglet = this.ongletTitle[0];
+    console.log(index);
+
+    switch(index) {
+      case (0): { this.currentOnglet = this.ongletTitle[2]; break;}
+      case 2: { this.currentOnglet = this.ongletTitle[1]; break;}
+      case (3): { this.currentOnglet = this.ongletTitle[2]; break;}
+      default: { this.currentOnglet = this.ongletTitle[0]; break }
     }
 
   }

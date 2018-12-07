@@ -17,7 +17,7 @@ export class AssociationPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController, public appCtrl: App) {
 
     if(!localStorage.getItem("Token")) {
-      this.appCtrl.getRootNavById().push(LoginPage);
+      this.appCtrl.getRootNav().push(LoginPage);
     } else {
       this.associationName = this.navParams.get("association");
       this.getAssociationDetails(this.associationName);
@@ -40,7 +40,7 @@ export class AssociationPage {
 
     toast.present(toast);
 
-    this.appCtrl.getRootNavById().push(LoginPage);
+    this.appCtrl.getRootNav().push(LoginPage);
   }
 
   editer() {

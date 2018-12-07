@@ -4,6 +4,23 @@ event-card {
     color: #488aff !important;
   }
 
+  .slide {
+    ion-list {
+      margin-bottom: 15px;
+    }
+  }
+
+
+  .eventImage {
+    width: 100%;
+  }
+
+  .noPadding {
+    ion-col {
+      padding: 0;
+    }
+  }
+
   .roundCard {
     border-radius: 10px;
     border: 1px solid limegreen;

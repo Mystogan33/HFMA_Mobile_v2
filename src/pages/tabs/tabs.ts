@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { Tabs } from 'ionic-angular'
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { AssociationPage } from '../association/association';
@@ -37,7 +38,6 @@ export class TabsPage {
         this.tabsColor = "dark"
         break;
       }
-
     }
 
   }

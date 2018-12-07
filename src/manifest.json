@@ -1,6 +1,6 @@
 {
-  "name": "Ionic",
-  "short_name": "Ionic",
+  "name": "HMFA_Client",
+  "short_name": "HMFA",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{

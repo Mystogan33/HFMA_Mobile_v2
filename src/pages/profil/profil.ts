@@ -17,7 +17,7 @@ export class ProfilPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController, public appCtrl: App) {
 
     if(!localStorage.getItem("Token")) {
-      this.appCtrl.getRootNavById().push(LoginPage);
+      this.appCtrl.getRootNav().push(LoginPage);
     } else {
       let isProfil = this.navParams.get('profile');
       if(!isProfil) {
@@ -56,7 +56,7 @@ export class ProfilPage {
 
     toast.present(toast);
 
-    this.appCtrl.getRootNavById().push(LoginPage);
+    this.appCtrl.getRootNav().push(LoginPage);
   }
 
 }

@@ -25,7 +25,7 @@ export class HomePage {
     this.tab2 = MyEventsPage;
 
     if(!localStorage.getItem("Token")) {
-      this.appCtrl.getRootNavById().push(LoginPage);
+      this.appCtrl.getRootNav().push(LoginPage);
     } else this.getEvents();
 
 
@@ -65,7 +65,7 @@ export class HomePage {
 
     toast.present(toast);
 
-    this.appCtrl.getRootNavById().push(LoginPage);
+    this.appCtrl.getRootNav().push(LoginPage);
   }
 
 }
