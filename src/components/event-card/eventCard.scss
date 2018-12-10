@@ -10,12 +10,20 @@ event-card {
     }
   }
 
+  .wrap-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
 
   .eventImage {
     width: 100%;
+    height: auto;
+    max-height: 225px;
   }
 
   .noPadding {
+    text-align: center;
     ion-col {
       padding: 0;
     }
@@ -37,7 +45,10 @@ event-card {
 
   .roundPicture {
     border-radius: 6px;
-
+    height: 80px;
+    max-height: 80px;
+    width: 128px;
+    width: 100%;
   }
 
   .publication {

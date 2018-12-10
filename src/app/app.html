@@ -11,7 +11,7 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content class="card-background-page" [@menuItems]="itemsMenu">
+    <ion-content class="card-background-page">
       <ion-card>
         <img src="assets/imgs/home.png"/>
         <div class="card-title">HFMA</div>
@@ -19,7 +19,7 @@
       </ion-card>
 
       <ion-list style="margin-top: 20px">
-        <button ion-item *ngFor="let item of itemsMenu" (click)="openPage(item)" mode="ios" color='search' style="border-radius: 20px; margin: 11px; width: 94%;" detail-push no-lines menuToggle>
+        <button ion-item *ngFor="let item of itemsMenu; let i= index" (click)="openPage(item, i)" mode="ios" color='search' style="border-radius: 20px; margin: 11px; width: 94%;" detail-push no-lines menuToggle>
           {{item.description}}
         </button>
       </ion-list>

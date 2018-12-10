@@ -37,31 +37,31 @@
         <ion-row>
           <ion-col col-6>
             <ion-item class="inputProfile">
-              <ion-label floating>Nom:</ion-label>
+              <ion-label floating>Nom</ion-label>
               <ion-input type="text" [(ngModel)]="profil.nom" [disabled]="!isEdit"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col col-6>
             <ion-item class="inputProfile">
-              <ion-label floating>Prénom:</ion-label>
+              <ion-label floating>Prénom</ion-label>
               <ion-input type="text" [(ngModel)]="profil.prenom" [disabled]="!isEdit"></ion-input>
             </ion-item>
           </ion-col>
-          <ion-col col-7.5>
+          <ion-col>
             <ion-item class="inputProfile">
-              <ion-label floating>Date de naissance:</ion-label>
-              <ion-input type="text" [(ngModel)]="profil.birth" [disabled]="!isEdit"></ion-input>
+              <ion-label floating>Ville</ion-label>
+              <ion-input type="text" [(ngModel)]="profil.ville" [disabled]="!isEdit"></ion-input>
             </ion-item>
           </ion-col>
-          <ion-col col-4.5>
+          <ion-col>
             <ion-item class="inputProfile">
-              <ion-label floating>Ville:</ion-label>
-              <ion-input type="text" [(ngModel)]="profil.ville" [disabled]="!isEdit"></ion-input>
+              <ion-label floating>Date de naissance</ion-label>
+              <ion-input type="text" [(ngModel)]="profil.birth" [disabled]="!isEdit"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col col-12>
             <ion-item class="inputProfile">
-              <ion-label floating>Mail:</ion-label>
+              <ion-label floating>Mail</ion-label>
               <ion-input type="text" [(ngModel)]="profil.mail" [disabled]="!isEdit"></ion-input>
             </ion-item>
           </ion-col>

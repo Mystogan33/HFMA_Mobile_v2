@@ -24,8 +24,6 @@ export class AssociationPage {
     }
   }
 
-  ionViewDidLoad() {}
-
   showProfil() {
     this.navCtrl.push(ProfilPage, {animate: true, animation: 'ios-transition', duration: 1000});
   }
@@ -56,8 +54,6 @@ export class AssociationPage {
   }
 
   getAssociationDetails(associationName) {
-
-    console.log(associationName);
 
     if(associationName == "Earth Green") {
       this.association = {
@@ -321,6 +317,49 @@ if(associationName == "Web for All") {
 description: "Creativity is the process of having original ideas that have value. It is a process; it's not random.", tarif: "Gratuit",
 lieu: "Ingesup Bordeaux, Bordeaux", association: "Web for All", likes: 20, comments: 4, published: 1
 }
+]
+}
+}
+if(associationName == "Badminton Club Aturin") {
+  this.association = {
+    name: associationName, image: "assets/imgs/bca.jpg", description: " L'association de badminton de Aire sur l'Adour", localisation: "assets/imgs/maps.png", website: "www.bca.fr",
+    members: [
+      {
+        nom: "Dastugues",
+        prenom: "Myriam",
+        pseudo: "myriam.dastugues40",
+        birth: "??/??/??",
+        ville: "Aire sur l'Adour",
+        mail: "myriam.dastugues@gmail.com",
+        image: "assets/imgs/myriam.jpg",
+        status: "Vice-Présidente"
+      },
+      {
+        nom: "Dastugues",
+        prenom: "Ludovic",
+        pseudo: "ludovic.dastugues40",
+        birth: "??/??/??",
+        ville: "Aire sur L'Adour",
+        mail: "ludovic.dastugues@gmail.com",
+        image: "assets/imgs/ludovic.jpg",
+        status: "Membre"
+      },
+      {
+        nom: "GAY",
+        prenom: "Valentin",
+        pseudo: "mystogan33",
+        birth: "06/12/1993",
+        ville: "Bordeaux",
+        mail: "mystogan40@gmail.com",
+        image: "assets/imgs/avatar.jpg",
+        status: "Membre"
+      }
+    ],
+    events: [
+      {title: "Tournoi T3R Mont de Marsan", date: "8 & 9 décembre 2018", logo: "assets/imgs/bca.jpg",
+      image: "assets/imgs/eventT3R.jpg", description: "13e edition du Tournoi de badminton de Mont de Marsan",
+      tarif: "Gratuit", lieu: "Espace Francois Mitterand, Mont de Marsan, France", association: "Badminton Club Aturin", likes: 10, comments: 1, published: 3
+    }
 ]
 }
 }

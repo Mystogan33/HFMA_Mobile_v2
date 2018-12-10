@@ -20,24 +20,32 @@ import { trigger, style, transition, animate, keyframes, query, stagger } from '
           ])
         ])
       ]
-})
-export class MyEventsPage {
+  })
+  export class MyEventsPage {
 
-  events: any;
+    events: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    constructor(public navCtrl: NavController, public navParams: NavParams) {
 
       this.events = this.navParams.get("events");
 
-  }
+    }
 
-  ionViewWillEnter() {
-    this.events = [];
-    this.getEvents();
-  }
+    ionViewWillEnter() {
+      this.events = [];
+      this.getEvents();
+    }
 
-  getEvents() {
-    this.events = [
+    getEvents() {
+      this.events = [
+        {title: "Tournoi T3R Mont de Marsan", date: "8 & 9 décembre 2018", logo: "assets/imgs/bca.jpg",
+        image: "assets/imgs/eventT3R.jpg", description: "13e edition du Tournoi de badminton de Mont de Marsan",
+        tarif: "Gratuit", lieu: "Espace Francois Mitterand, Mont de Marsan, France", association: "Badminton Club Aturin", likes: 10, comments: 1, published: 3
+      },
+        {title: "Réunion sur l'énergie renouvelable", date: "13 Juillet 2018", logo: "assets/imgs/event1Logo.jpg",
+        image: "assets/imgs/event1.jpg", description: "My style is unique and random. But I think it's important that it still makes sense.",
+        tarif: "Gratuit", lieu: "Palais des expositions, Bordeaux", association: "Earth Green", likes: 2, comments: 3, published: 10
+      },
       {title: "Réunion sur l'énergie renouvelable", date: "13 Juillet 2018", logo: "assets/imgs/event1Logo.jpg",
       image: "assets/imgs/event1.jpg", description: "My style is unique and random. But I think it's important that it still makes sense.",
       tarif: "Gratuit", lieu: "Palais des expositions, Bordeaux", association: "Earth Green", likes: 2, comments: 3, published: 10
@@ -69,7 +77,5 @@ filterEvents(ev: any) {
   }
 
 }
-
-
 
 }

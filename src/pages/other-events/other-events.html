@@ -1,5 +1,11 @@
 <ion-content style="margin-bottom: 10px" [@eventsItems]="events">
-  <event-card *ngFor="let event of events" [event]="events[0]"></event-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let event of events" col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4>
+        <event-card [event]="event"></event-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 <ion-toolbar color='search' class="searchBar">
   <ion-searchbar (ionInput)="filterEvents($event)" placeholder="Rechercher des évènements" animated="true" mode="ios"></ion-searchbar>

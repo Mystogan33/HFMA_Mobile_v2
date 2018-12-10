@@ -3,29 +3,14 @@ import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
+import { trigger, style, transition, animate, keyframes, query, stagger, state } from '@angular/animations';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { UsersPage } from '../pages/users/users';
 import { AssociationsPage } from '../pages/associations/associations';
 
 @Component({
-  templateUrl: 'app.html',
-  animations: [
-    trigger('menuItems', [
-      transition('void => *', [
-
-        query(':enter', style({ opacity: 0}), {optional: true}),
-
-        query(':enter', stagger('300ms', [
-          animate('.6s ease-in', keyframes([
-            style({opacity: 0, transform: 'translateX(-75%)', offset: 0}),
-            style({opacity: 0.5, transform: 'translateX(35px)', offset: 0.3}),
-            style({opacity: 1, transform: 'translateX(0)', offset: 1.0}),
-          ]))]), {optional: true})
-        ])
-      ])
-    ]
+  templateUrl: 'app.html'
   })
   export class MyApp {
 
@@ -41,12 +26,12 @@ import { AssociationsPage } from '../pages/associations/associations';
         // Here you can do any higher level native things you might need.
         statusBar.styleDefault();
         splashScreen.hide();
-        this.refreshList();
+        this.initList();
         this.getAssociations();
       });
     }
 
-    openPage(page) {
+    openPage(page, index) {
 
       if(page.type != 'push') {
         this.nav.setRoot(page.component);
@@ -83,11 +68,11 @@ import { AssociationsPage } from '../pages/associations/associations';
       }
     }
 
-    refreshList() {
-      this.itemsMenu = [];
+    initList() {
       this.itemsMenu = [
-        {description: 'Rechercher une association', component: AssociationsPage, type: 'push'},
-        {description: 'Rechercher un utilisateur', component: UsersPage, type: 'push'}
+        {description: 'Rechercher une association', component: AssociationsPage, type: 'push', selected: false},
+        {description: 'Rechercher un utilisateur', component: UsersPage, type: 'push', selected: false}
       ];
     }
+
   }
