@@ -1,5 +1,36 @@
 page-profil {
 
+  ion-content {
+    background: url('../assets/imgs/homeWallpaper.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+
+  }
+
+  .profilNavBar {
+
+    #drawerButton {
+      color: color($colors, "light");
+    }
+
+    #title {
+      text-align: center;
+      padding: 0 !important;
+      font-weight: bold;
+
+      div {
+        color: color($colors, "light");
+      }
+    }
+
+  }
+
+  .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    height:auto;
+  }
+
   .pageTitle {
     text-align: center;
     padding: 0 !important;
@@ -68,15 +99,6 @@ page-profil {
     width: 108px;
     height: 108px;
     border-radius: 54px;
-  }
-
-  ion-content {
-    background: url('../assets/imgs/homeWallpaper.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover;
-
   }
 
 }

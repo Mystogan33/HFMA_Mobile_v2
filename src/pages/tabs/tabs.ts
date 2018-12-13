@@ -35,7 +35,7 @@ export class TabsPage {
         break;
       }
       case "Messages": {
-        this.tabsColor = "dark"
+        this.tabsColor = "dynamic"
         break;
       }
     }

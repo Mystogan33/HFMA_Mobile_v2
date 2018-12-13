@@ -5,7 +5,6 @@
     <ion-segment [(ngModel)]="mode" mode="md">
       <ion-segment-button value="signIn" class="authChoice">Connexion</ion-segment-button>
       <ion-segment-button value="signUp" class="authChoice">Inscription</ion-segment-button>
-      <ion-segment-button value="informations">Informations</ion-segment-button>
     </ion-segment>
 
     <div [ngSwitch]="mode">
@@ -76,15 +75,10 @@
           </ion-row>
         </ion-grid>
       </ion-list>
-
-      <ion-list *ngSwitchCase="'informations'">
-        Under development
-      </ion-list>
     </div>
   </ion-card>
 
-  <button *ngIf="mode == 'signIn' || mode == 'signUp'" ion-button round class="signInButton" (click)="authentification()">{{mode == "signIn" ? "Se connecter" : "S'inscrire" }}</button>
-  <button *ngIf="mode == 'informations'" ion-button round class="signInButton" (click)="authentification()">Nous contacter</button>
-  <button ion-button round outline class="signUpButton">Oubli ?</button>
+  <button *ngIf="mode == 'signIn' || mode == 'signUp'" ion-button round class="signInButton" (click)="authentification()" color="secondary">{{mode == "signIn" ? "Se connecter" : "S'inscrire" }}</button>
+  <button ion-button round outline class="signUpButton" color="light">Oubli ?</button>
 
 </ion-content>

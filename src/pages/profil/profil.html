@@ -1,22 +1,20 @@
-<ion-header>
-  <ion-navbar color='primary'>
-
-    <button ion-button menuToggle>
+<ion-header transparent>
+  <ion-navbar class="profilNavBar" transparent>
+    <button id="drawerButton" ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
 
-    <ion-item color="primary" no-lines>
+    <ion-item style="background: transparent !important; border:none;" no-lines>
 
-      <ion-title class="pageTitle">{{profil == mainProfil ? "Mon profil" : "Détail du profil"}}</ion-title>
+      <ion-title id="title" class="pageTitle">{{profil == mainProfil ? "Mon profil" : "Détail du profil"}}</ion-title>
 
-      <ion-avatar item-end (tap)="showProfil()" (press)="deconnexion('bottom')">
+      <ion-avatar item-end (tap)="showProfil()" (click)="showProfil()" (press)="deconnexion('bottom')">
         <img src="assets/imgs/avatar.jpg">
       </ion-avatar>
 
     </ion-item>
   </ion-navbar>
 </ion-header>
-
 
 <ion-content>
 

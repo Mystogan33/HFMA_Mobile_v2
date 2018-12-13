@@ -1,24 +1,24 @@
-<ion-header>
-  <ion-navbar color='search'>
-    <button ion-button menuToggle>
-    <ion-icon name="menu"></ion-icon>
-  </button>
+<ion-header transparent>
+  <ion-navbar class="homeNavBar" transparent>
+    <button id="drawerButton" ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
 
     <ion-item style="background: transparent !important; border:none;" no-lines>
 
-    <ion-title class="pageTitle">Accueil</ion-title>
+      <ion-title id="title">Accueil</ion-title>
 
-    <ion-avatar item-end (tap)="showProfil()" (click)="showProfil()" (press)="deconnexion('bottom')">
-      <img src="assets/imgs/avatar.jpg">
-    </ion-avatar>
+      <ion-avatar item-end (tap)="showProfil()" (click)="showProfil()" (press)="deconnexion('bottom')">
+        <img src="assets/imgs/avatar.jpg">
+      </ion-avatar>
 
-  </ion-item>
+    </ion-item>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-tabs tabsPlacement='top' class="currentTabOnglet">
-      <ion-tab [root]="tab1" [rootParams]="{events: events}" tabTitle="Propositions" tabIcon="star"></ion-tab>
-      <ion-tab [root]="tab2" [rootParams]="{events: events}" tabTitle="Mes events" tabIcon="heart"></ion-tab>
+    <ion-tab [root]="tab1" [rootParams]="{events: events}" tabTitle="Propositions" tabIcon="star"></ion-tab>
+    <ion-tab [root]="tab2" [rootParams]="{events: events}" tabTitle="Mes events" tabIcon="heart"></ion-tab>
   </ion-tabs>
 </ion-content>

@@ -1,16 +1,39 @@
 page-association {
 
-  .pageTitle {
-    text-align: center;
-    padding: 0 !important;
-  }
+    ion-content {
+      background: url('../assets/imgs/homeWallpaper.jpg') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -ms-background-size: cover;
+      background-size: cover;
 
-  .toolbar-title-ios {
-    padding-bottom: 13px;
+    }
+
+  .assoNavBar {
+
+    #drawerButton {
+      color: color($colors, "light");
+    }
+
+    #title {
+      text-align: center;
+      padding: 0 !important;
+
+      div {
+        color: color($colors, "light");
+      }
+    }
+
   }
 
   .title-ios {
     left: -23px !important;
+  }
+
+  .toolbar-title-ios {
+    padding-bottom: 13px;
+    font-size: 2.4rem;
+    font-weight: normal;
   }
 
   .toolbar-title-md {
@@ -81,8 +104,6 @@ page-association {
     color: green;
   }
 
-  .inputChip {}
-
   .inputChip > input {
     margin-top: 0px !important;
     text-align: center;
@@ -109,13 +130,8 @@ page-association {
     border-radius: 20px;
   }
 
-  ion-content {
-    background: url('../assets/imgs/homeWallpaper.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover;
-
+  .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    height:auto;
   }
 
 }

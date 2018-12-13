@@ -1,8 +1,33 @@
 page-contact {
 
-  .pageTitle {
-    text-align: center;
-    padding: 0 !important;
+  ion-content {
+    background: url('../assets/imgs/messages.jpg') no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+  }
+
+
+  .homeNavBar {
+
+    #drawerButton {
+      color: color($colors, "dynamic");
+    }
+
+    #title {
+      text-align: center;
+      padding: 0 !important;
+
+      div {
+        color: color($colors, "dynamic");
+      }
+    }
+
+  }
+
+  .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    height:auto;
   }
 
   .title-ios {
@@ -14,24 +39,16 @@ page-contact {
     margin-bottom: 10px;
     border-radius: 20px;
     width: 95%;
-    background-color: slateblue;
+    background-color: color($colors,"dynamic");
 
     h2 {
       color: white;
     }
 
     p {
-      color: burlywood;
+      color: color($colors,"dark");
     }
 
-  }
-
-  ion-content {
-    background: url('../assets/imgs/messages.jpg') no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover;
   }
 
   .toolbar-title-ios {

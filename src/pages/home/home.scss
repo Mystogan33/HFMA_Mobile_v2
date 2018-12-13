@@ -1,14 +1,34 @@
 page-home {
 
-  background: url('../assets/imgs/Starfall.png') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -ms-background-size: cover;
-  background-size: cover;
+  ion-content {
+    background: url('../assets/imgs/background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
 
-  .pageTitle {
-    text-align: center;
-    padding: 0 !important;
+  }
+
+  .homeNavBar {
+
+    #drawerButton {
+      color: color($colors, "search");
+    }
+
+    #title {
+      text-align: center;
+      padding: 0 !important;
+      font-weight: bold;
+
+      div {
+        color: color($colors, "search");
+      }
+    }
+
+  }
+
+  .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    height:auto;
   }
 
   .title-ios {
@@ -30,16 +50,10 @@ page-home {
   }
 
   .currentTabOnglet {
-    background-color: transparent !important;
-  }
 
-  .currentTabOnglet > div {
-    background-color: transparent !important;
-    border-bottom: none !important;
-  }
-
-  .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
-    height:auto;
+    div {
+      background-color: transparent !important;
+    }
   }
 
 }
