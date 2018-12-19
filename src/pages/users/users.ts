@@ -51,7 +51,6 @@ export class UsersPage {
   }
 
   doRefresh(refresher) {
-    console.log('Begin async operation', refresher);
     this.getUsers(100);
     setTimeout(() => {
       refresher.complete();

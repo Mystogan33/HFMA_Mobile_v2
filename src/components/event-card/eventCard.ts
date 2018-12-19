@@ -27,7 +27,6 @@ export class eventCard {
 
   setSegment() {
     var index = this.slides.getActiveIndex();
-    console.log(index);
 
     switch(index) {
       case (0): { this.currentOnglet = this.ongletTitle[2]; break;}

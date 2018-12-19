@@ -29,9 +29,7 @@ export class ProfilPage {
     }
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilPage');
-  }
+  ionViewDidLoad() {}
 
   showProfil() {
     if(this.profil == this.mainProfil) this.navCtrl.pop();
