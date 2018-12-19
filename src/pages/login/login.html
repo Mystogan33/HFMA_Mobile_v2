@@ -2,28 +2,22 @@
   <div class="splash-bg"></div>
   <div class="splash-info">
     <div class="splash-logo"></div>
-    <ion-grid>
-      <ion-row>
-        <ion-col col-12>
-          <ion-item class="itemConnexion">
-            <ion-label floating class="loginLabel">Identifiant</ion-label>
-            <ion-input type="text"></ion-input>
-          </ion-item>
-        </ion-col>
-        <ion-col col-10>
-          <ion-item class="itemConnexion">
-            <ion-label floating class="loginLabel">Mot de passe</ion-label>
-            <ion-input type="password"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <div class="login">
+      <ion-item class="itemConnexion">
+        <ion-label stacked class="loginLabel">Identifiant</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item class="itemConnexion">
+        <ion-label stacked class="loginLabel">Mot de passe</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+    </div>
+    <div padding>
 
-<div padding>
-<button ion-button block round (click)="login()" class="login">{{ 'Connexion' }}</button>
-<button ion-button block round class="forgot" color="search">{{ 'Identifiants oubliés ?' }}</button>
-<button ion-button block round (click)="signUp()">{{ 'Inscription' }}</button>
-</div>
+      <button ion-button block round (click)="login()" class="login">{{ 'Connexion' }}</button>
+      <button ion-button block round (click)="signUp()">{{ 'Inscription' }}</button>
+      <button ion-button block round class="forgot" color="search">{{ 'Identifiants oubliés ?' }}</button>
+    </div>
 
   </div>
 

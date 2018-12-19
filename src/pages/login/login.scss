@@ -9,6 +9,15 @@ page-login {
 
   }
 
+  .login {
+
+    & > .item {
+      width: 95%;
+      color: white;
+    }
+
+  }
+
   .splash-bg {
     position: relative;
     background: url('../assets/imgs/gaming.jpg') no-repeat transparent;
@@ -16,7 +25,7 @@ page-login {
     opacity: 0.6;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    height: 30%;
+    height: 30vh;
     z-index: 1;
   }
 
@@ -28,7 +37,7 @@ page-login {
   }
   .splash-logo {
     margin: auto;
-    background: url('../assets/imgs/appLogo.png') repeat center transparent;
+    background: url('../assets/imgs/appLogo.jpg') repeat center transparent;
     background-size: 100%;
     border-radius: 64px;
     width: 128px;
@@ -45,7 +54,7 @@ page-login {
     border-bottom: none !important;
 
     .loginLabel {
-      color: color($colors,"secondary") !important;
+      color: color($colors,"search") !important;
     }
 
   }
