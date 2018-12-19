@@ -1,84 +1,30 @@
-<ion-content padding>
+<ion-content scroll="false">
+  <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-logo"></div>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12>
+          <ion-item class="itemConnexion">
+            <ion-label floating class="loginLabel">Identifiant</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-10>
+          <ion-item class="itemConnexion">
+            <ion-label floating class="loginLabel">Mot de passe</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-  <ion-card class="loginCard">
+<div padding>
+<button ion-button block round (click)="login()" class="login">{{ 'Connexion' }}</button>
+<button ion-button block round class="forgot" color="search">{{ 'Identifiants oubliés ?' }}</button>
+<button ion-button block round (click)="signUp()">{{ 'Inscription' }}</button>
+</div>
 
-    <ion-segment [(ngModel)]="mode" mode="md" class="loginSegment">
-      <ion-segment-button value="signIn" class="loginSegmentBtn">Connexion</ion-segment-button>
-      <ion-segment-button value="signUp" class="loginSegmentBtn">Inscription</ion-segment-button>
-    </ion-segment>
-
-    <div [ngSwitch]="mode">
-      <ion-list *ngSwitchCase="'signIn'">
-        <ion-grid>
-          <ion-row>
-            <ion-col col-12>
-              <ion-item class="inputConnexion">
-                <ion-label floating>Identifiant</ion-label>
-                <ion-input type="text"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-12 class="last">
-              <ion-item class="inputConnexion">
-                <ion-label floating>Mot de passe</ion-label>
-                <ion-input type="password"></ion-input>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-list>
-
-      <ion-list *ngSwitchCase="'signUp'">
-        <ion-grid>
-          <ion-row>
-            <ion-col col-6>
-              <ion-item class="inputInscription">
-                <ion-label floating>Nom</ion-label>
-                <ion-input type="text"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-6>
-              <ion-item class="inputInscription">
-                <ion-label floating>Prénom</ion-label>
-                <ion-input type="text"></ion-input>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col col-6>
-              <ion-item class="inputInscription">
-                <ion-label floating>Pseudo</ion-label>
-                <ion-input type="text"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-6>
-              <ion-item class="inputInscription">
-                <ion-label floating>Mail</ion-label>
-                <ion-input type="text"></ion-input>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col col-12>
-              <ion-item class="inputInscription">
-                <ion-label floating>Mot de passe</ion-label>
-                <ion-input type="password"></ion-input>
-              </ion-item>
-            </ion-col>
-            </ion-row>
-            <ion-row>
-            <ion-col col-12 class="last">
-              <ion-item class="inputInscription">
-                <ion-label floating>Vérification mot de passe</ion-label>
-                <ion-input type="password"></ion-input>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-list>
-    </div>
-  </ion-card>
-
-  <button *ngIf="mode == 'signIn' || mode == 'signUp'" ion-button round class="signInButton" (click)="authentification()" color="rose">{{mode == "signIn" ? "Se connecter" : "S'inscrire" }}</button>
-  <button ion-button round outline class="signUpButton" color="primary">Oubli ?</button>
+  </div>
 
 </ion-content>

@@ -9,78 +9,67 @@ page-login {
 
   }
 
-  ion-label {
-    color: color($colors,"light") !important;
+  .splash-bg {
+    position: relative;
+    background: url('../assets/imgs/gaming.jpg') no-repeat transparent;
+    background-size: cover;
+    opacity: 0.6;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 30%;
+    z-index: 1;
   }
 
-  .loginSegment {
-    box-shadow: none;
+  .splash-info {
+    position: relative;
+    z-index: 2;
+    margin-top: -64px;
+    text-align: center;
   }
-
-  .segment-button {
-    color: color($colors,"light") !important;
-    border-bottom-color: transparent !important;
-  }
-  .segment-button.segment-activated {
-      border-color: color($colors,"search") !important;
-      color: color($colors,"search") !important;
+  .splash-logo {
+    margin: auto;
+    background: url('../assets/imgs/appLogo.png') repeat center transparent;
+    background-size: 100%;
+    border-radius: 64px;
+    width: 128px;
+    height: 128px;
   }
 
   .loginCard {
-    position: absolute;
-    top: 2%;
-    width: 85%;
+    border-radius: 20px;
     background: transparent;
-    box-shadow: none;
-    border-radius: 10px;
-
   }
 
-  .last {
-    padding-bottom: 15px;
-  }
-
-  .authChoice {
-    border-right: 1px solid lawngreen !important;
-  }
-
-  .inputConnexion {
+  .itemConnexion {
     background: transparent;
-    color: color($colors,"secondary");
-    padding-left: 16px;
-    padding-right: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #32db64 !important;
+    border-bottom: none !important;
+
+    .loginLabel {
+      color: color($colors,"secondary") !important;
+    }
+
   }
 
-  .inputConnexion:focus {
-    border-bottom-color: color($colors,"search") !important;
-  }
-
-  .inputInscription {
+  .itemSignUp {
     background: transparent;
-    color: color($colors,"secondary");
-    padding-left: 16px;
-    padding-right: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #32db64 !important;
+    border-bottom: none !important;
   }
 
-  .inputInscription:focus {
-    border-bottom-color: color($colors,"search") !important;
+  button.login {
+    margin-bottom: 10px;
+    background-color: white;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    color: #333;
+
+    &.activated {
+      background-color: rgb(220, 220, 220);
+    }
   }
 
-  .signInButton {
-    position: absolute !important;
-    bottom: 5%;
-    left: 8%;
-
-  }
-
-  .signUpButton {
-    position: absolute !important;
-    bottom: 5%;
-    right: 8%;
+  button.forgot {
+    margin-bottom: 10px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    color: #333;
   }
 
 }

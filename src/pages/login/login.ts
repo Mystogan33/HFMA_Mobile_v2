@@ -8,7 +8,7 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
 
-  mode: any = "signIn";
+  mode: any = '';
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public appCtrl: App, public menuCtrl: MenuController) {
   }
@@ -17,7 +17,11 @@ export class LoginPage {
     this.menuCtrl.enable(false);
   }
 
-  authentification() {
+  signUp() {
+    this.mode = 'signUp'
+  }
+
+  login() {
     localStorage.setItem("Token" , "OK");
     this.menuCtrl.enable(true);
     this.appCtrl.getRootNav().push(TabsPage);
